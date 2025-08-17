@@ -1,212 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Bamidele Azeem - Web Developer Portfolio. Check out my projects, skills, and contact info.">
-<meta name="keywords" content="Bamidele Azeem, web developer, HTML, CSS, JavaScript, Nigeria, portfolio">
-<meta name="author" content="Bamidele Azeem">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="style.css" />
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bamidele Azeem | Web Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bamidele Azeem | Frontend Developer</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body class="light-mode">
-  <header class="navbar">
-    <div class="container nav-wrapper">
-      <div class="logo">Bamidele<span class="accent">Dev</span></div>
-      <nav id="nav-menu">
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><button id="darkToggle" class="btn-outline">🌙</button></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <style>
+    .download-cv {
+      background: #00f7ff;
+      color: #000;
+      padding: 10px 16px;
+      margin-left: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
 
-  <main>
-    <section id="hero" class="hero">
-      <div class="container hero-content">
-        <h1>Hi, I'm <span class="accent">Bamidele Azeem</span></h1>
-        <p class="subtitle">I craft modern, responsive websites that turn visitors into customers.</p>
-        <a href="#contact" class="btn-primary">Hire Me</a>
-        <a href="cv.pdf" class="btn-outline" download>Download CV</a>
-      </div>
-    </section>
+    .download-cv:hover {
+      background: #00c6d6;
+      transform: translateY(-2px);
+    }
 
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p>
-          I'm a Nigeria‑based <strong>frontend developer</strong> skilled in HTML, CSS, and JavaScript. I enjoy turning designs into functional, beautiful websites that solve problems and attract users.
-        </p>
-      </div>
-    </section>
+    .download-cv i {
+      margin-right: 8px;
+    }
 
-   <h2 class="section-title">Featured Projects</h2>
-
-<!-- Project Filters -->
-<div class="filter-buttons">
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="web">Web</button>
-  <button class="filter-btn" data-filter="ui">UI</button>
-  <button class="filter-btn" data-filter="design">Design</button>
-</div>
-
-<!-- Project Grid -->
-<div class="projects-grid">
-  <article class="project-card" data-category="web">
-    <img src="https://images.pexels.com/photos/4464483/pexels-photo-4464483.jpeg" alt="E‑commerce">
-    <h3>E‑commerce Store</h3>
-    <p>Online store with cart system.</p>
-    <a href="#" class="btn-outline">Live Demo</a>
-  </article>
-
-  <article class="project-card" data-category="ui">
-    <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg" alt="UI Project">
-    <h3>UI Landing Page</h3>
-    <p>Modern SaaS design layout.</p>
-    <a href="#" class="btn-outline">Live Demo</a>
-  </article>
-
-  <article class="project-card" data-category="design">
-    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Portfolio">
-    <h3>Portfolio Site</h3>
-    <p>Personal branding and portfolio site.</p>
-    <a href="#" class="btn-outline">Live Demo</a>
-  </article>
-</div>
-
-    <section id="contact" class="section">
-      <div class="container">
-        <h2 class="section-title">Let’s Work Together</h2>
-        <form action="#" class="contact-form">
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" required />
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" required />
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea rows="5" required></textarea>
-          </div>
-          <button class="btn-primary" type="submit">Send</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
- 
-  <script>
-    // Dark Mode Toggle
-    const toggleBtn = document.getElementById('darkToggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀' : '🌙';
-    });
-  </script>
-  <script>
-// ========== FILTER BUTTONS ==========
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const filter = btn.getAttribute('data-filter');
-
-    // Update active button
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    // Filter cards
-    projectCards.forEach(card => {
-      const category = card.getAttribute('data-category');
-      if (filter === 'all' || filter === category) {
-        card.style.display = 'block';
-        card.classList.add('show');
-      } else {
-        card.style.display = 'none';
-        card.classList.remove('show');
+    @media (max-width: 768px) {
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
       }
-    });
-  });
-});
-
-// ========== SCROLL ANIMATION ==========
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
+      .download-cv {
+        margin-left: 0;
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+      }
     }
-  });
-}, {
-  threshold: 0.1
-});
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="Bamidele_Abdul_Azeem_Ademola_CV.pdf" class="download-cv" download>
+      <i class="fas fa-file-download"></i> Download CV
+    </a>
+  </nav>
 
-document.querySelectorAll('.project-card').forEach(card => {
-  observer.observe(card);
-});
-</script>
-<script>
-  // Toggle dark mode
-  const toggle = document.getElementById('darkModeToggle');
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+  <section class="hero" data-animate>
+    <h1>Bamidele Azeem</h1>
+    <p>Frontend Developer building modern web experiences</p>
+  </section>
 
-    // Optional: Change icon on toggle
-    if (document.body.classList.contains('dark-mode')) {
-      toggle.textContent = '☀'; // Light mode icon
-    } else {
-      toggle.textContent = '🌙'; // Dark mode icon
-    }
-  });
-</script>
-<section id="testimonials">
-  <h2 class="section-title">Client Testimonials</h2>
-  <div class="testimonial-grid">
-    <div class="testimonial">
-      <p>"Bamidele's work exceeded our expectations. Fast, clean, and on point!"</p>
-      <h4>— John Doe, CEO of TechCore</h4>
-    </div>
-    <div class="testimonial">
-      <p>"He built our website with zero bugs and excellent design. Highly recommended."</p>
-      <h4>— Sarah Ali, Brand Designer</h4>
-    </div>
-  </div>
-</section>
-<section id="skills">
-  <h2 class="section-title">My Skills</h2>
-  <div class="skill-bar">
-    <h4>HTML</h4>
-    <div class="bar"><div class="fill" style="width: 95%;">95%</div></div>
-  </div>
-  <div class="skill-bar">
-    <h4>CSS</h4>
-    <div class="bar"><div class="fill" style="width: 90%;">90%</div></div>
-  </div>
-  <div class="skill-bar">
-    <h4>JavaScript</h4>
-    <div class="bar"><div class="fill" style="width: 80%;">80%</div></div>
-  </div>
-</section>
- <footer class="footer">
-    <div class="container">
-      <p>© 2025 Bamidele Azeem. All rights reserved.</p>
-      <div class="social-links">
-        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:bamideleazeem72@gmail.com"><i class="fas fa-envelope"></i></a>
+  <section id="about" class="about" data-animate>
+    <h2>About Me</h2>
+    <p>
+      I'm Bamidele Azeem, a passionate frontend developer who loves crafting beautiful and functional user interfaces.
+      With hands-on experience in HTML, CSS, JavaScript, and real-world projects like my
+      <a href="https://cybersecyrity.github.io/student-record-keeper1/" target="_blank" style="color:#00f7ff">Student Record Keeper</a>,
+      I'm committed to delivering clean, responsive, and engaging websites.
+    </p>
+  </section>
+
+  <section id="skills" class="skills" data-animate>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fab fa-html5"></i>
+        <span>HTML5</span>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-css3-alt"></i>
+        <span>CSS3</span>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-js"></i>
+        <span>JavaScript</span>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-react"></i>
+        <span>React</span>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-mobile-alt"></i>
+        <span>Responsive Design</span>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-code"></i>
+        <span>Git & GitHub</span>
       </div>
     </div>
+  </section>
+
+  <section id="projects" class="about" data-animate>
+    <h2>Featured Project</h2>
+    <p>
+      <strong>Student Record Keeper</strong> – A fully functional college student management system with login, CRUD, stats,
+      and local storage. <a href="https://cybersecyrity.github.io/student-record-keeper1/" target="_blank" style="color:#00f7ff">View Live</a>
+    </p>
+  </section>
+
+  <section id="contact" class="contact" data-animate>
+    <h2>Contact Me</h2>
+    <form
+  action="https://formsubmit.co/lilmaya490@gmail.com" method="POST" style="max-width: 600px; margin: auto;">
+    <form action="#">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your Name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your Email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Bamidele Azeem | Frontend Developer | Built with ❤️
   </footer>
 
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('[data-animate]').forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const height = window.innerHeight;
+        if (top < height - 100) {
+          el.classList.add('animated');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
